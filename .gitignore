@@ -1,0 +1,10 @@
+*.wav
+*.e*
+*.asv
+*.csv
+*.mat
+*.json
+*.log
+*.rar
+*.xml
+scripts/
