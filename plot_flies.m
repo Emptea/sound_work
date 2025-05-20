@@ -1,5 +1,5 @@
 function plot_flies(filepath, save)
-    files = string(ls(filepath + "fly_*.mat"));
+    files = string(ls(filepath + "fly*.mat"));
     for i = 1:length(files)
         fig = figure;
         gx = geoaxes;
@@ -7,7 +7,6 @@ function plot_flies(filepath, save)
         hold on;
         load(filepath + files(i));
         geoplot(fly.lat, fly.lon)
-        gx.ZoomLevel = gx.ZoomLevel - 1;
         hold off
 
         if save == true

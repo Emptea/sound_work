@@ -10,7 +10,7 @@ elseif n_chs == 32
     sg = [sg(31) sg(1:30) sg(32:end)];
     T = table(t', sg{:}, 'VariableNames', ['Time', 'Signal_sum' varNames 'Signal_synch']);
 else
-    varNames = arrayfun(@(x) sprintf('Signal_%d', x), 1:n_chs, 'UniformOutput', false);
+    varNames = arrayfun(@(x) sprintf('Signal_%d', x), 1:(n_chs), 'UniformOutput', false);
     T = table(t', sg{:}, 'VariableNames', ['Time', varNames]);
 end
 T.Time.Format = 'HH:mm:ss.SSS';

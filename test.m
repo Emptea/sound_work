@@ -1,21 +1,14 @@
 % clear;
 n_refch = 14;
-path = ".\21032025_flies\raw\ПАН левый длинные\";
+path = "F:\work\sound_work\depart_08112024\master\third_part\";
 
-files = string(ls(path + "*.e32"));
+files = string(ls(path + "\*.e*"));
 refch = [];
-t = [];
-refch_sync = [];
 for i = 1:length(files)
-    [data, time] = read_sg(path + files(i), files(i), 1);
-    % data = read_raw(path  + "\" + files(i), 1);
-    refch = [refch; data(:,11)];
-    % refch_sync = [refch_sync; data(:,32)];
-    % refch = [refch; data];
-    t = [t time];
+    data = read_raw(path  + "\" + files(i), 1);
+    refch = [refch; data];
 end
-audiowrite(path+ "refch.wav", refch,16e3)
-% audiowrite('F:\work\sound_work\21032025_flies\refch1.wav', refch,16e3)
+
 
 % clear;
 % path1 = "E:\Сбер\Выезд 08112024\master\первая часть\";
